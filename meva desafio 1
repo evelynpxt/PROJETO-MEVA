@@ -1,0 +1,37 @@
+CREATE TABLE aluno (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+CREATE TABLE category (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(250) NOT NULL
+);
+CREATE TABLE subcategory (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(250) NOT NULL
+);
+CREATE TABLE aluno_curso (
+    aluno_id INTEGER,
+        curso_id INTEGER,
+        PRIMARY KEY (aluno_id, curso_id),
+
+        FOREIGN KEY (aluno_id)
+         REFERENCES aluno (id),
+
+        FOREIGN KEY (curso_id)
+         REFERENCES curso (id)
+
+);
+SELECT*FROM;
+DROP TABLE ;
+
+CREATE TABLE usermeva (
+    cpf CHAR(11) PRIMARY KEY,
+  "name" VARCHAR(250) NOT NULL,
+	genre char(1) NOT NULL,
+	birth DATE NOT NULL,
+	"state"VARCHAR(100)NOT NULL,
+	"city"varchar(100)NOT NULL
+);
+
+
