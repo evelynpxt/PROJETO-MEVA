@@ -22,29 +22,17 @@ CREATE TABLE aluno_curso (
          REFERENCES curso (id)
 
 );
-SELECT*FROM;
-DROP TABLE ;
 
-CREATE TABLE usermeva (
-    cpf CHAR(11) PRIMARY KEY,
-  "name" VARCHAR(250) NOT NULL,
-	genre char(1) NOT NULL,
-	birth DATE NOT NULL,
-	"state"VARCHAR(100)NOT NULL,
-	"city"varchar(100)NOT NULL
+CREATE TABLE month_expenses (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(255) NOT NULL,
+    value DECIMAL(15, 2) NOT NULL,
+    id_family INTEGER NOT NULL REFERENCES family(id),
+    id_category INTEGER NOT NULL REFERENCES category(id),
+    cpf VARCHAR(11) NOT NULL REFERENCES user_meva(cpf),
+    type VARCHAR(50) NOT NULL, -- FIXO OU VARIAVEL
+    date DATE NOT NULL,
+    parcel INTEGER,
+    bank VARCHAR
 );
-CREATE TABLE sub_category (
-   category_id INTEGER,
-        subcategory_id INTEGER,
-        PRIMARY KEY (category_id, subcategory_id),
-
-        FOREIGN KEY (category_id)
-         REFERENCES category (id),
-
-        FOREIGN KEY (subcategory_id)
-         REFERENCES subcategory (id)
-
-);
-
-
 
