@@ -33,5 +33,18 @@ CREATE TABLE usermeva (
 	"state"VARCHAR(100)NOT NULL,
 	"city"varchar(100)NOT NULL
 );
+CREATE TABLE sub_category (
+   category_id INTEGER,
+        subcategory_id INTEGER,
+        PRIMARY KEY (category_id, subcategory_id),
+
+        FOREIGN KEY (category_id)
+         REFERENCES category (id),
+
+        FOREIGN KEY (subcategory_id)
+         REFERENCES subcategory (id)
+
+);
+
 
 
