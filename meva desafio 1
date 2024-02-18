@@ -35,4 +35,37 @@ CREATE TABLE month_expenses (
     parcel INTEGER,
     bank VARCHAR
 );
+CREATE TABLE close_month (
+    id SERIAL PRIMARY KEY,
+    valor_total DOUBLE PRECISION NOT NULL,
+    month DATE NOT NULL,
+    date_update DATE NOT NULL,
+    id_family INTEGER NOT NULL,
+    FOREIGN KEY (id_family) REFERENCES family(id) -- Assuming there is a table named 'family' with 'id' as primary key
+);
+CREATE TABLE life_cost (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(250) NOT NULL,
+    value DOUBLE PRECISION NOT NULL,
+    month DATE NOT NULL,
+    id_family INTEGER NOT NULL,
+    FOREIGN KEY (id_family) REFERENCES family(id) -- Assuming there is a table named 'family' with 'id' as primary key
+);
+
+
+CREATE TABLE debito (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(250) NOT NULL,
+    value DOUBLE PRECISION NOT NULL,
+    id_family INTEGER NOT NULL,
+    id_category INTEGER NOT NULL,
+    cpf VARCHAR(11) NOT NULL,
+    date DATE NOT NULL,
+    parcel INTEGER NOT NULL,
+    bank VARCHAR,
+    FOREIGN KEY (id_family) REFERENCES family(id), -- Assuming there is a table named 'family' with 'id' as primary key
+    FOREIGN KEY (id_category) REFERENCES category(id), -- Assuming there is a table named 'category' with 'id' as primary key
+    FOREIGN KEY (cpf) REFERENCES user_meva(cpf) -- Assuming there is a table named 'user_meva' with 'cpf' as primary key
+);
+
 
