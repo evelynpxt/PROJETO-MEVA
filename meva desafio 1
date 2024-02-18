@@ -1,5 +1,23 @@
 SELECT*FROM debito
 DROP TABLE debito
+APRESENTAÇÃO
+INSERT INTO family (description) VALUES ('Cristiano Silva');
+INSERT INTO category (description) VALUES ('Dad of the Family');
+
+SELECT * FROM family WHERE id = 1;
+
+COUNT(*)
+
+JOIN
+SELECT *
+FROM family
+JOIN sub_category ON sub_category.family_description = family.description;
+
+GROUP BY
+
+ORDER BY
+
+HAVING
 
 
 
