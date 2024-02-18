@@ -16,6 +16,9 @@ JOIN sub_category ON sub_category.family_description = family.description;
 GROUP BY
 
 ORDER BY
+SELECT *
+    FROM family
+    ORDER BY 4
 
 HAVING
 
