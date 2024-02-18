@@ -1,3 +1,9 @@
+SELECT*FROM debito
+DROP TABLE debito
+
+
+
+
 CREATE TABLE aluno (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL
@@ -6,22 +12,13 @@ CREATE TABLE category (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(250) NOT NULL
 );
-CREATE TABLE subcategory (
+CREATE TABLE sub_category (
     id SERIAL PRIMARY KEY,
-    description VARCHAR(250) NOT NULL
+    description VARCHAR(250) NOT NULL,
+    id_category INTEGER NOT NULL,
+    FOREIGN KEY (id_category) REFERENCES category(id) -- Assuming there is a table named 'category' with 'id' as primary key
 );
-CREATE TABLE aluno_curso (
-    aluno_id INTEGER,
-        curso_id INTEGER,
-        PRIMARY KEY (aluno_id, curso_id),
 
-        FOREIGN KEY (aluno_id)
-         REFERENCES aluno (id),
-
-        FOREIGN KEY (curso_id)
-         REFERENCES curso (id)
-
-);
 
 CREATE TABLE month_expenses (
     id SERIAL PRIMARY KEY,
